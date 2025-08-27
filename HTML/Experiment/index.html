@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body style="background-color: rgb(125, 171, 125); font-family: 'Lucida Sans', sans-serif; margin: 20px;">
+
+    <header id="header" style="background-color: darkgrey; display: flex; align-items: center; padding: 20px;">
+        <img height="350" style="border: 2px solid black; border-radius: 50%; box-sizing: border-box;"
+            src="c:\Users\Dell\OneDrive\Pictures\profile crop.jpg" alt="Profile Picture">
+        <div style="padding: 25px; margin: 20px;">
+            <h1 style="color: rgb(50, 1, 1); text-decoration: underline;">Gauri Agarwal</h1>
+            <h3 style="color: rgb(49, 76, 3); text-decoration: underline;">Enthusiastic Frontend Developer</h3>
+        </div>
+    </header>
+
+    <main>
+
+        <section>
+            <h2 style="background-color: rgba(169, 169, 169, 0.845); color: rgb(50, 1, 1);">Contact Section</h2>
+            <ul style="background-color: #f0f0f09d;">
+                <li>Email: <a href="mailto:gouriagarwal864@gmail.com">gouriagarwal864@gmail.com</a></li>
+                <li>Phone: +91 7983487864</li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/gauriagwl864"
+                        target="_blank">linkedin.com/in/gauriagwl864</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 style="background-color: rgba(169, 169, 169, 0.845); color: rgb(50, 4, 4);">About Me</h2>
+            <p style="text-align: justify; background-color: #f0f0f09d;">
+                🎓 I’m a second-year <b>Computer Science Engineering</b> student, currently learning <i>Advanced
+                    Frontend
+                    Development</i> and
+                <i>Data Structures & Algorithms</i> in Java. In my free time, I enjoy diving into tech articles to stay
+                on top of
+                trends and sharpen my knowledge. 🖋️ <u>Fun Fact</u>: When I’m not coding or studying algorithms,
+                you’ll probably find me writing content ✨
+            </p>
+        </section>
+
+        <section>
+            <h2 style="background-color: rgba(169, 169, 169, 0.845); color: rgb(50, 4, 4);">Education</h2>
+            <table style="border: 1px solid black; border-collapse: collapse; width: 80%; background-color: #f0f0f09d;">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px;">Year</th>
+                    <th style="border: 1px solid black; padding: 8px;">Degree</th>
+                    <th style="border: 1px solid black; padding: 8px;">Institute</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">2024 - Present</td>
+                    <td style="border: 1px solid black; padding: 8px;">Bachelors of Computer Science</td>
+                    <td style="border: 1px solid black; padding: 8px;">GLA University</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">2024</td>
+                    <td style="border: 1px solid black; padding: 8px;">12th Grade</td>
+                    <td style="border: 1px solid black; padding: 8px;">St Anthony's Senior Secondary School</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">2022</td>
+                    <td style="border: 1px solid black; padding: 8px;">10th Grade</td>
+                    <td style="border: 1px solid black; padding: 8px;">Dayawati Modi Academy</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2 style="background-color: rgba(169, 169, 169, 0.845); color:rgb(50, 4, 4);">Skills</h2>
+            <ul style="background-color:#f0f0f09d;">
+                <li>HTML, CSS, JavaScript <progress value="55" max="100" style="background-color: brown;"></progress>
+                </li>
+                <li>Pyhton, C, Java <progress value="80" max="100" style="background-color: brown;"></progress></li>
+                <li>Data structures and Algorithms <progress value="60" max="100"
+                        style="background-color: brown;"></progress>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 style="background-color: rgba(169, 169, 169, 0.845); color: rgb(50, 4, 4);">Hobbies</h2>
+            <ul style="background-color: #f0f0f09d;">
+                <li>🖋️ Writing Content</li>
+                <li>♟️ Playing Chess</li>
+                <li>💻 Coding Challenges</li>
+            </ul>
+        </section>
+        <section id="time_table">
+            <style>
+                #time_table {
+                    max-width: 1100px;
+                    margin: 40px auto;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    color: #222;
+                }
+
+                #time_table caption {
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    padding: 10px;
+                    background: #006c32;
+                    color: white;
+                    border-radius: 6px 6px 0 0;
+                }
+
+                #time_table table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 30px;
+                    background: #fff;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                    border-radius: 6px;
+                    overflow: hidden;
+                }
+
+                #time_table th,
+                #time_table td {
+                    border: 1px solid #ddd;
+                    padding: 10px;
+                    text-align: center;
+                    font-size: 13px;
+                }
+
+                #time_table thead th {
+                    background: #e6f0ea;
+                    font-weight: bold;
+                }
+
+                #time_table tbody tr:nth-child(even) {
+                    background: #fafafa;
+                }
+
+                #time_table tbody tr:hover {
+                    background: #f1f9f6;
+                    transition: 0.3s;
+                }
+
+                #time_table tfoot td {
+                    text-align: center;
+                    font-weight: bold;
+                    background: #006c32;
+                    color: white;
+                }
+
+                .highlight {
+                    background: #fff799 !important;
+                    font-weight: bold;
+                }
+
+                #time_table .legend-table th {
+                    background: #006c32;
+                    color: white;
+                }
+
+                #time_table .legend-table td {
+                    font-size: 14px;
+                }
+            </style>
+
+            <table>
+                <caption>GLA UNIVERSITY, MATHURA - Time Table (Odd Semester Programme)</caption>
+                <thead>
+                    <tr>
+                        <th colspan="11">
+                            Institute of Engineering & Technology | Computer Engineering & Applications | B.Tech
+                            (CSE)<br>
+                            Section: 2FD | Semester: III | Class Advisor: Dr. Neetu Agrawal (EC) | Session: 2025-26 |
+                            w.e.f. 04/Aug/2025
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Day / Lecture #</th>
+                        <th>1<br>08:00-09:00</th>
+                        <th>2<br>09:00-10:00</th>
+                        <th>3<br>10:00-11:00</th>
+                        <th>4<br>11:00-12:00</th>
+                        <th>5<br>12:00-01:00</th>
+                        <th>6<br>01:00-02:00</th>
+                        <th>7<br>02:00-03:00</th>
+                        <th>8<br>03:00-04:00</th>
+                        <th>9<br>04:00-05:00</th>
+                        <th>10<br>05:00-06:00</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>BCSC1003<br>ABVIII-411</td>
+                        <td></td>
+                        <td>PCPH0001<br>ABVIII-411</td>
+                        <td></td>
+                        <td>BCSC1003<br>ABVIII-411</td>
+                        <td>BELH3003<br>ABVIII-411</td>
+                        <td>BCSC1005<br>ABVIII-411</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>BCSC1003<br>ABVIII-411</td>
+                        <td>BCSC1010<br>ABVIII-411</td>
+                        <td>BCSC1005<br>ABVIII-411</td>
+                        <td></td>
+                        <td>BCSC1003<br>ABVIII-411</td>
+                        <td>BELH3003<br>ABVIII-411</td>
+                        <td>BCSE0031<br>ABVIII-411</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>BCSC1010<br>ABVIII-410</td>
+                        <td>2FD3/BCSC1010<br>ABVIII-410</td>
+                        <td colspan="2">
+                            2FD1/BCSC0802/ABI-204<br>
+                            2FD2/BCSC0802/ABI-205<br>
+                            2FD3/BCSC0802/ABI-206
+                        </td>
+                        <td>BCSC1003<br>ABVIII-411</td>
+                        <td>2FD1/BCSC1010<br>ABVIII-411</td>
+                        <td>
+                            2FD1/BELH3003<br>ABVIII-411<br>
+                            2FD2/BELH3003<br>ABVIII-410
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td colspan="2">
+                            2FD1/BCSC0804/ABI-5002<br>
+                            2FD2/BCSC0804/ABI-5004<br>
+                            2FD3/BCSC0504/ABI-5005
+                        </td>
+                        <td>BCSE0831<br>ABVIII-410</td>
+                        <td></td>
+                        <td>BCSE0031<br>ABVIII-411</td>
+                        <td>BCSC1005<br>ABVIII-411</td>
+                        <td>
+                            2FD2/BCSC1010<br>
+                            2FD1/BELH3003
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td></td>
+                        <td></td>
+                        <td>BCSC1010<br>ABVIII-411</td>
+                        <td>BCSE0031<br>ABVIII-411</td>
+                        <td class="highlight">BCSC0801<br>ABVIII-404</td>
+                        <td>
+                            2FD1/BELH3003<br>
+                            2FD2/BELH3003<br>
+                            ABVIII-409
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td colspan="10"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="11">End of Timetable | Total Subjects: <b>7</b> | Total Working Hours: <b>34</b>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <section>
+            <h2 style="background-color: rgba(169, 169, 169, 0.845); color: rgb(50, 4, 4);">Course Subjects - Semester
+            </h2>
+
+            <table
+                style="border: 2px solid black; border-collapse: collapse; width: 100%; background-color: #f0f0f09d;">
+                <thead>
+                    <tr>
+                        <th style="border: 2px solid black; padding: 8px;">Code</th>
+                        <th style="border: 2px solid black; padding: 8px;">Subject Name</th>
+                        <th style="border: 2px solid black; padding: 8px;">Credit</th>
+                        <th style="border: 2px solid black; padding: 8px;">L T P</th>
+                        <th style="border: 2px solid black; padding: 8px;">Faculty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSC1005</td>
+                        <td style="border: 2px solid black; padding: 8px;">Computer Organization</td>
+                        <td style="border: 2px solid black; padding: 8px;">3</td>
+                        <td style="border: 2px solid black; padding: 8px;">3 0 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">Dr. Neetu Agrawal (EC)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSC0804</td>
+                        <td style="border: 2px solid black; padding: 8px;">Computer Organization Lab</td>
+                        <td style="border: 2px solid black; padding: 8px;">1</td>
+                        <td style="border: 2px solid black; padding: 8px;">0 0 2</td>
+                        <td style="border: 2px solid black; padding: 8px;">2FD1: Dr. Neetu Agrawal, 2FD2: Dr. Arnab
+                            Panda, 2FD3: Dr. Dhirendra Kumar</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">ONLC0020</td>
+                        <td style="border: 2px solid black; padding: 8px;">Software Engineering (Online)</td>
+                        <td style="border: 2px solid black; padding: 8px;">3</td>
+                        <td style="border: 2px solid black; padding: 8px;">3 0 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">Dr. Praveen Mittal</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSC1010</td>
+                        <td style="border: 2px solid black; padding: 8px;">Discrete Mathematics</td>
+                        <td style="border: 2px solid black; padding: 8px;">4</td>
+                        <td style="border: 2px solid black; padding: 8px;">3 1 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">Dr. Praveen Mittal</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSC1003</td>
+                        <td style="border: 2px solid black; padding: 8px;">Database Management Systems</td>
+                        <td style="border: 2px solid black; padding: 8px;">3</td>
+                        <td style="border: 2px solid black; padding: 8px;">3 0 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">Mr. Joy Gorai</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSC0802</td>
+                        <td style="border: 2px solid black; padding: 8px;">Database Management Systems Lab</td>
+                        <td style="border: 2px solid black; padding: 8px;">1</td>
+                        <td style="border: 2px solid black; padding: 8px;">0 0 2</td>
+                        <td style="border: 2px solid black; padding: 8px;">Mr. Joy Gorai, Mr. Amit Kumar, Ms. Medha
+                            Kirit</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSC1002</td>
+                        <td style="border: 2px solid black; padding: 8px;">Object Oriented Programming</td>
+                        <td style="border: 2px solid black; padding: 8px;">3</td>
+                        <td style="border: 2px solid black; padding: 8px;">3 0 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">INTEGRAMIND</td>
+                    </tr>
+                    <tr style="background-color: #ffff99;">
+                        <td style="border: 2px solid black; padding: 8px;">BCSC0801</td>
+                        <td style="border: 2px solid black; padding: 8px;">Object Oriented Programming Lab (BYOD)</td>
+                        <td style="border: 2px solid black; padding: 8px;">1</td>
+                        <td style="border: 2px solid black; padding: 8px;">0 0 2</td>
+                        <td style="border: 2px solid black; padding: 8px;">INTEGRAMIND</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BELH3003</td>
+                        <td style="border: 2px solid black; padding: 8px;">English for Professional Purpose - I (Core)
+                        </td>
+                        <td style="border: 2px solid black; padding: 8px;">2</td>
+                        <td style="border: 2px solid black; padding: 8px;">2 2 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">Dr. Praveen Singh</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">PCPH0001</td>
+                        <td style="border: 2px solid black; padding: 8px;">General Physics (Online)</td>
+                        <td style="border: 2px solid black; padding: 8px;">1</td>
+                        <td style="border: 2px solid black; padding: 8px;">0 0 2</td>
+                        <td style="border: 2px solid black; padding: 8px;">INTEGRAMIND</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BELH0017</td>
+                        <td style="border: 2px solid black; padding: 8px;">Ethics & Values (Online)</td>
+                        <td style="border: 2px solid black; padding: 8px;">2</td>
+                        <td style="border: 2px solid black; padding: 8px;">2 0 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">Ms. Manisha Rao (GLA125851)</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSE0031</td>
+                        <td style="border: 2px solid black; padding: 8px;">Introduction to Frontend Engineering</td>
+                        <td style="border: 2px solid black; padding: 8px;">3</td>
+                        <td style="border: 2px solid black; padding: 8px;">3 0 0</td>
+                        <td style="border: 2px solid black; padding: 8px;">FITTrainer_1</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 2px solid black; padding: 8px;">BCSE0831</td>
+                        <td style="border: 2px solid black; padding: 8px;">Introduction to Frontend Engineering Lab</td>
+                        <td style="border: 2px solid black; padding: 8px;">1</td>
+                        <td style="border: 2px solid black; padding: 8px;">0 0 2</td>
+                        <td style="border: 2px solid black; padding: 8px;">FITTrainer_1</td>
+                    </tr>
+                    <tr style="font-weight: bold; background-color: #d3d3d3;">
+                        <td colspan="2" style="border: 2px solid black; text-align: right; padding: 8px;">Total</td>
+                        <td style="border: 2px solid black; text-align: center;">28</td>
+                        <td colspan="2" style="border: 2px solid black;"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                <strong>Time Table Incharge:</strong> Mr. Raushan Kumar Singh / Mr. Rahul Kumar, CEA Dept.<br>
+                <strong>PC:</strong> Dr. Joginder Pal Singh (B. Tech Hns.)<br>
+                <strong>Associate Head:</strong> Dr. Sandeep Rathore, CEA Dept.
+            </p>
+        </section>
+
+
+
+    </main>
+
+    <footer style="text-align: center; margin-top: 20px; padding: 10px; background-color: #00436c; color: white;">
+        &copy; 2025 Gauri Agarwal. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
