@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main-container">
+
+        <div id="profile-card">
+            <img id="profile-img" src="https://via.placeholder.com/150" alt="Profile" width="150">
+            <h2 id="profile-name">Gauri Agarwal</h2>
+            <h4 id="profile-role">Software Developer</h4>
+            <p id="profile-bio">Short bio goes here.</p>
+            <div id="skills-list"></div>
+            <div id="details">Additional details here...</div>
+        </div>
+
+        <div id="control-panel">
+            <label>Name:<br>
+            <input type="text" id="input-name">
+            </label><br><br>
+
+
+            <label>Role:<br>
+            <input type="text" id="input-role">
+            </label><br><br>
+
+
+            <label>Bio:<br>
+            <textarea id="input-bio" rows="3"></textarea>
+            </label><br><br>
+
+
+            <label>Add Skill:<br>
+            <input type="text" id="input-skill">
+            <button id="btn-add-skill">Add</button>
+            </label><br><br>
+
+            <div id="theme-colors">
+            <div class="theme-btn" data-color="#f8b400" style="background:#f8b400"></div>
+            <div class="theme-btn" data-color="#4caf50" style="background:#4caf50"></div>
+            <div class="theme-btn" data-color="#2196f3" style="background:#2196f3"></div>
+            </div><br>
+
+
+            <button id="btn-toggle-details">Show/Hide Details</button><br><br>
+            <button id="btn-remove-skill">Remove Last Skill</button>
+        </div>
+
+
+</div>
+</body>
+</html>
