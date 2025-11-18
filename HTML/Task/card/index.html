@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        /* border: 2px solid black; */
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-container{
+        border: 2px solid rgb(0, 0, 0);
+        width:300px;
+        height:450px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        background-color: rgb(237, 172, 213);
+        border-radius: 2%;
+        /* transform: scale(1.1);
+        transition: 0.2s; */
+    }
+    .profile-card.profile-img{
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        /* padding:5px;
+        margin:5px; */
+
+    }
+
+</style>
+<body>
+    <div class="main-container">
+        <div class="profile-card">
+            <img id="profile-img" src="https://sp.yimg.com/ib/th/id/OIP.cSgjmqsQ5KmBQQF9qO-8zQHaFq?pid=Api&w=148&h=148&c=7&dpr=2&rs=1" alt="Profile" width="150">
+            <h2 id="profile-name">Gauri Agarwal</h2>
+            <h4 id="profile-role">Software Developer</h4>
+        </div>
+    
+        <div class="profile-card">
+            <label>Role:<br>
+            <input type="text" id="input-role">
+            </label><br><br>
+
+            <label>Bio:<br>
+            <textarea id="input-bio" rows="3"></textarea>
+            </label><br><br>
+            <button>Reset</button>
+            <button>Submit</button>
+        </div>
+    
+
+    
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit a Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    input, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-top: 20px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Submit Your Details</h2>
+  <form id="cardForm">
+    <input type="text" id="name" placeholder="Enter your name" required>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="cardContainer"></div>
+
+  <script>
+    const form = document.getElementById('cardForm');
+    const cardContainer = document.getElementById('cardContainer');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // stop page reload
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      // Create a card element
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>${name}</h3>
+        <p>${email}</p>
+      `;
+
+      cardContainer.appendChild(card);
+
+      form.reset(); // clear the form
+    });
+  </script>
+
+</body>
+</html>
