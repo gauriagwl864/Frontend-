@@ -1,0 +1,45 @@
+body {
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#container {
+    width: 250px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+    text-align: center;
+}
+
+.option {
+    background: pink;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.correct {
+    background: green;
+    color: white;
+}
+
+.wrong {
+    background: red;
+    color: white;
+}
+
+button {
+    width: 100px;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
