@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Basic Calculator</title>
+
+  <style>
+    /* Page layout and centering */
+    body {
+      display: flex;                 /* make a flex container */
+      align-items: center;           /* vertical center */
+      justify-content: center;       /* horizontal center */
+      height: 100vh;                 /* full viewport height */
+      margin: 0;                     /* remove default margin */
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;           /* light gray background */
+    }
+
+    /* Calculator wrapper */
+    .calculator {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      width: 320px;
+      padding: 16px;
+    }
+
+    /* Display at top */
+    .display {
+      height: 60px;
+      background: #0f172a;           /* dark background for contrast */
+      color: #fff;
+      font-size: 24px;
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+    .display .history { font-size: 12px; opacity: 0.7; }
+    .display .current { font-weight: 600; }
+
+    /* Buttons grid */
+    .keys {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 columns */
+      gap: 10px;
+    }
+
+    /* Generic button style */
+    button {
+      font-size: 18px;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #e6eef8;
+      transition: transform 0.06s ease;
+    }
+    button:active { transform: translateY(1px); }
+
+    /* Operator buttons */
+    .operator { background: #fbbf24; color: #111827; }
+
+    /* Clear and equals styling */
+    .clear { background: #ef4444; color: white; grid-column: span 2; }
+    .equals { background: #10b981; color: white; grid-column: span 2; }
+
+    /* Make zero wider */
+    .zero { grid-column: span 2; }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <!-- display: shows previous expression and current input/result -->
+    <div class="display">
+      <div class="history" id="history"></div>  <!-- small top line -->
+      <div class="current" id="current">0</div> <!-- main number/result -->
+    </div>
+
+    <!-- All buttons -->
+    <div class="keys">
+      <button class="clear" id="clear">C</button>    <!-- clears everything -->
+      <button id="back">⌫</button>                    <!-- backspace -->
+      <button class="operator" data-op="/">÷</button>
+      <button class="operator" data-op="*">×</button>
+
+      <button data-num="7">7</button>
+      <button data-num="8">8</button>
+      <button data-num="9">9</button>
+      <button class="operator" data-op="-">−</button>
+
+      <button data-num="4">4</button>
+      <button data-num="5">5</button>
+      <button data-num="6">6</button>
+      <button class="operator" data-op="+">+</button>
+
+      <button data-num="1">1</button>
+      <button data-num="2">2</button>
+      <button data-num="3">3</button>
+      <button id="equals" class="equals">=</button>
+
+      <button class="zero" data-num="0">0</button>
+      <button data-num=".">.</button>
+    </div>
+  </div>
+
+  <script>
+    // Grab DOM elements
+    const historyEl = document.getElementById('history'); // top small line
+    const currentEl = document.getElementById('current'); // main number
+    const keys = document.querySelectorAll('button');     // all buttons
+
+    // Internal state
+    let current = '0';        // string shown as current input
+    let previous = '';        // previous expression (for history)
+    let operator = null;      // stored operator (+,-,*,/)
+    let resetNext = false;    // whether next number should reset input (after operator or equals)
+
+    // Update the UI from state
+    function updateDisplay() {
+      historyEl.textContent = previous;
+      currentEl.textContent = current;
+    }
+
+    // Append a digit or decimal point to current input
+    function appendNumber(num) {
+      if (resetNext) {               // if flag set, start fresh
+        current = (num === '.') ? '0.' : num;
+        resetNext = false;
+        return;
+      }
+      if (num === '.' && current.includes('.')) return; // prevent multiple dots
+      if (current === '0' && num !== '.') {
+        current = num;              // replace leading zero
+      } else {
+        current = current + num;    // append digit
+      }
+    }
+
+    // Choose an operator (+ - * /)
+    function chooseOperator(op) {
+      if (operator !== null) {
+        // If an operator is already chosen, compute intermediate result first
+        compute();
+      }
+      operator = op;
+      previous = current + ' ' + op; // show operator in history
+      resetNext = true;              // next number will replace current
+    }
+
+    // Compute result based on previous/current/operator
+    function compute() {
+      if (operator == null || resetNext) return; // nothing to compute
+      const prevNum = parseFloat(previous);      // parse previous value
+      const currNum = parseFloat(current);       // parse current value
+      if (isNaN(prevNum) || isNaN(currNum)) return;
+
+      let result = 0;
+      switch (operator) {
+        case '+':
+          result = prevNum + currNum;
+          break;
+        case '-':
+          result = prevNum - currNum;
+          break;
+        case '*':
+          result = prevNum * currNum;
+          break;
+        case '/':
+          result = currNum === 0 ? 'Error' : prevNum / currNum;
+          break;
+      }
+
+      current = String(result);   // show result as current
+      previous = '';              // clear history
+      operator = null;           // clear operator
+      resetNext = true;          // next number should replace result
+    }
+
+    // Clear everything
+    function clearAll() {
+      current = '0';
+      previous = '';
+      operator = null;
+      resetNext = false;
+    }
+
+    // Backspace: remove last character from current
+    function backspace() {
+      if (resetNext) {
+        current = '0';
+        resetNext = false;
+        return;
+      }
+      if (current.length === 1) {
+        current = '0';
+      } else {
+        current = current.slice(0, -1);
+      }
+    }
+
+    // Wire up button clicks
+    keys.forEach(button => {
+      // numbers and dot
+      if (button.dataset.num !== undefined) {
+        button.addEventListener('click', () => {
+          appendNumber(button.dataset.num);
+          updateDisplay();
+        });
+      }
+
+      // operators
+      if (button.dataset.op !== undefined) {
+        button.addEventListener('click', () => {
+          // when choosing operator, store current value in previous
+          // but we store it as number-like string for parseFloat later
+          if (!resetNext && operator == null) {
+            // first time choosing operator, store current as previous
+            previous = current;
+          }
+          chooseOperator(button.dataset.op);
+          updateDisplay();
+        });
+      }
+    });
+
+    // clear button
+    document.getElementById('clear').addEventListener('click', () => {
+      clearAll();
+      updateDisplay();
+    });
+
+    // backspace button
+    document.getElementById('back').addEventListener('click', () => {
+      backspace();
+      updateDisplay();
+    });
+
+    // equals button
+    document.getElementById('equals').addEventListener('click', () => {
+      compute();
+      updateDisplay();
+    });
+
+    // initialize display
+    updateDisplay();
+
+    // Optional: allow keyboard input for convenience
+    window.addEventListener('keydown', (e) => {
+      if ((e.key >= '0' && e.key <= '9') || e.key === '.') {
+        appendNumber(e.key);
+        updateDisplay();
+      } else if (['+', '-', '*', '/'].includes(e.key)) {
+        // emulate clicking an operator
+        if (!resetNext && operator == null) previous = current;
+        chooseOperator(e.key);
+        updateDisplay();
+      } else if (e.key === 'Enter' || e.key === '=') {
+        compute();
+        updateDisplay();
+      } else if (e.key === 'Backspace') {
+        backspace();
+        updateDisplay();
+      } else if (e.key.toLowerCase() === 'c') {
+        clearAll();
+        updateDisplay();
+      }
+    });
+  </script>
+</body>
+</html>
